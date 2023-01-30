@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title>#1 GIS Mapping &amp; Aerial Imagery Tools &amp; Analytics | EagleView US</title>
+    <meta property="og:image"
+          content="https://www.eagleview.com/wp-content/uploads/2021/04/hero-image_Logo_1.jpg?resize=1024,542"/>
+    <meta property="og:image:secure_url"
+          content="https://www.eagleview.com/wp-content/uploads/2021/04/hero-image_Logo_1.jpg?resize=1024,542"/>
+    <meta property="og:image:width" content="1024"/>
+    <meta property="og:image:height" content="542"/>
+    <link rel="icon"
+          href="https://www.eagleview.com/wp-content/uploads/2019/02/cropped-LOGO-MARK-Favicon-512x512.png?w=192"
+          sizes="192x192"/>
+    <link rel="apple-touch-icon"
+          href="https://www.eagleview.com/wp-content/uploads/2019/02/cropped-LOGO-MARK-Favicon-512x512.png?w=180"/>
+    <meta name="msapplication-TileImage"
+          content="https://www.eagleview.com/wp-content/uploads/2019/02/cropped-LOGO-MARK-Favicon-512x512.png?w=270"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
+        .rw-conversation-container .rw-header {
+            background-color: rgb(51, 71, 91) !important;
+        }
+
+        .rw-conversation-container .rw-header {
+            background-color: rgb(51, 71, 91) !important;
+        }
+
+        .rw-conversation-container .rw-messages-container .rw-message .rw-client {
+            background-color: rgb(51, 71, 91) !important;
+        }
+
+        .rw-launcher {
+            background-color: rgb(51, 71, 91) !important;
+        }
+
+        .rw-conversation-container .rw-reply {
+            background-color: rgb(51, 71, 91) !important;;
+            border: 1px solid rgb(51, 71, 91) !important;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="imgbox">
+    <img class="center-fit" src="https://www.eagleview.com/wp-content/uploads/2021/04/hero-image_Logo_1.jpg">
+</div>
+
+
+<script>!(function () {
+    let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+    (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+        (e.async = !0),
+        (e.onload = () => {
+            window.WebChat.default(
+                {
+                    initPayload: "/greet",
+                    customData: {language: "en"},
+                    socketUrl: "http://localhost:5005",
+                    title: "EagleBot",
+                    profileAvatar: "./assets/profileAvatar.png",
+                    openLauncherImage: "",
+                    closeImage: "",
+                    embedded: false,
+                    showFullScreenButton: false,
+                    showMessageDate: true,
+                    inputTextFieldHint: "What's in your mind?...",
+                    params: {
+                        "images": {
+                            "dims": {
+                                "width": 128,
+                                "height": 128
+                            }
+                        },
+                        "storage": "session"
+                    },
+                    OnWidgetEvent: {
+                        OnChatOpen: () => {
+                            console.log("called")
+                            // window.sessionStorage.clear()
+                            // window.localStorage.removeItem("chat_session")
+                        }
+                    },
+                    onSocketEvent: {
+                        'bot_uttered': () => console.log('the bot said something'),
+                        // 'connect': () => console.log('connection established'),
+                        'connect': () => {
+                            console.log('connection established')
+                            sessionStorage.clear()
+                        },
+                        'disconnect': () => {
+                            console.log('disconnected')
+                            sessionStorage.clear()
+                        },
+                    },
+                },
+                null
+            );
+        }),
+        t.insertBefore(e, t.firstChild);
+})();
+</script>
+
+
+<!--<div id="rasa-chat-widget" data-websocket-url="http://localhost:5005/"></div>-->
+<!--<script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>-->
+
+</body>
+</html>
